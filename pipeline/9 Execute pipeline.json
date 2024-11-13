@@ -1,0 +1,26 @@
+{
+	"name": "9 Execute pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Calling area calculation",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "3 area calculation",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-08-07T19:13:04Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

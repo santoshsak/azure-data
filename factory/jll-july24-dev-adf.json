@@ -1,0 +1,9 @@
+{
+	"name": "jll-july24-dev-adf",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "51cb09d9-f38d-4a8b-a6ab-16b38fe7b7da",
+		"tenantId": "9a33c9d5-9e08-4e6b-9fbc-17b0cc736fa9"
+	}
+}

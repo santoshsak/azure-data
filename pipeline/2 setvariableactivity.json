@@ -1,0 +1,29 @@
+{
+	"name": "2 setvariableactivity",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set Length",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Length",
+					"value": "10"
+				}
+			}
+		],
+		"variables": {
+			"Length": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-07-31T13:24:08Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

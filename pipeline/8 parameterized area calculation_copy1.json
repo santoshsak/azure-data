@@ -1,0 +1,93 @@
+{
+	"name": "8 parameterized area calculation_copy1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set Length",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Length",
+					"value": {
+						"value": "@pipeline().parameters.Param_Length",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Set Breadth",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Breadth",
+					"value": {
+						"value": "@pipeline().parameters.Param_Breadth",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Calucalation area",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Set Length",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "Set Breadth",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Area",
+					"value": {
+						"value": "@mul(pipeline().parameters.Param_Length,pipeline().parameters.Param_Breadth)",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"Param_Length": {
+				"type": "int"
+			},
+			"Param_Breadth": {
+				"type": "int"
+			}
+		},
+		"variables": {
+			"Length": {
+				"type": "Integer"
+			},
+			"Breadth": {
+				"type": "Integer"
+			},
+			"Area": {
+				"type": "Integer"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-08-07T17:59:19Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
